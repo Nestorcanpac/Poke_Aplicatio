@@ -43,7 +43,7 @@ public class FirstFragment extends Fragment {
                 pokemons
         );
 
-        binding.viewListaPokes.setAdapter(pokemonArrayAdapter);
+        binding.ListaGatos.setAdapter(pokemonArrayAdapter);
 
     }
 
