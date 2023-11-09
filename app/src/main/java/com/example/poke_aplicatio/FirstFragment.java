@@ -6,13 +6,9 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import com.example.poke_aplicatio.databinding.FragmentFirstBinding;
-
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -54,7 +50,6 @@ public class FirstFragment extends Fragment {
     void actualizar() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.myLooper());
-
         executor.execute(() -> {
             PokemonApi api = new PokemonApi();
             ArrayList<Pokemon> result = api.getPokemons();
@@ -64,7 +59,6 @@ public class FirstFragment extends Fragment {
                for (Pokemon p : result) {
                    pokemonArrayAdapter.add(p);
                }
-
             });
         });
     }
